@@ -1,4 +1,3 @@
-//JS Object to replace the Database, since we don't got one lol
 const carros = [
     {
         marca: 'Ford',
