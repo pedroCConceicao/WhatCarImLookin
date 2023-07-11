@@ -1,19 +1,22 @@
 const express = require('express');
-const mysql = require('mysql');
+const mysql = require('mysql2/promise');
+const { isAsyncFunction } = require('util/types');
 const connection = mysql.createConnection({
-    host: 'db.kasparyan.freeddns.org',
+    host: '191.55.128.101',
     port: 53306,
     user: 'pedroc',
     password: 'Techers123$',
     database: 'pedroc_tcc',
 });
-connection.connect( (error) => {
-    console.log(error)
-    connection.query("SELECT * FROM `carros`", (resposta) => {
-        console.log(resposta)
-    });
 
-});
+async function teste(){
+    
+    const [rows, fields] = await (await connection).execute('SELECT * FROM `carros`');
+
+}
+
+teste();
+
 
 
 
