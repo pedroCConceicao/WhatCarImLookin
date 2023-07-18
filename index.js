@@ -8,17 +8,28 @@ const connection = mysql.createConnection({
     database: 'pedroc_tcc',
 });
 
+const preco = 30000;
+const passengers = 3;
+const condution = "Cidade";
+const fueltype = "Flex";
+const traction = "4x2";
+const load = 350;
+const space = "Mediano";
+const transmission = "Automatic";
+const consumo = 9.00;
 
 //Saves the database over a object list
 async function teste(){
     
     //rows = cars
     const [rows, fields] = await (await connection).execute('SELECT * FROM `carros`');
-    
+
+    //First Filter (Passengers)
+    let viable_car = rows.filter( (car) => car.passengers >= passengers );
+    console.log("Primeiro Filtro");
+    console.log(viable_car);
 
 }
-
-
 
 teste();
 
