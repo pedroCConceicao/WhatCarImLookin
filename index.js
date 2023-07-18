@@ -1,4 +1,3 @@
-const express = require('express');
 const mysql = require('mysql2/promise');
 const { isAsyncFunction } = require('util/types');
 const connection = mysql.createConnection({
@@ -9,11 +8,17 @@ const connection = mysql.createConnection({
     database: 'pedroc_tcc',
 });
 
+
+//Saves the database over a object list
 async function teste(){
     
+    //rows = cars
     const [rows, fields] = await (await connection).execute('SELECT * FROM `carros`');
+    
 
 }
+
+
 
 teste();
 
