@@ -1,7 +1,7 @@
 const mysql = require('mysql2/promise');
 const { isAsyncFunction } = require('util/types');
 const connection = mysql.createConnection({
-    host: '191.55.128.101',
+    host: 'db.kasparyan.freeddns.org',
     port: 53306,
     user: 'pedroc',
     password: 'Techers123$',
