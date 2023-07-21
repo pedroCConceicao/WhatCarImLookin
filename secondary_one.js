@@ -1,48 +1,85 @@
-//Database simulation
+//Database simulation by object list
 const carros = [
     {
-        marca: 'Ford',
-        modelo: 'Fiesta',
-        passageiros: 4,
-        road: ["Off-road", "Highway", "City"],
-        tracao: ["4x2"]
+        id: 1,
+        modelo: 'Voyage',
+        brand: 'Volkswagen',
+        price: 33900,
+        passengers: 5,
+        condution: ['Cidade', 'Rodovia'],
+        fueltype: 'Flex',
+        traction: '4x2',
+        load: 462,
+        space: 'Mediano',
+        transmission: 'Automatico',
+        consume: 8.95
     },
     {
-        marca: 'Citroen',
-        modelo: 'C3',
-        passageiros: 4,
-        road: ["Highway", "City"],
-        tracao: ["4x4"]
+        id: 2,
+        modelo: 'Fox',
+        brand: 'Volkswagen',
+        price: 24900,
+        passengers: 5,
+        condution: 'Cidade',
+        fueltype: 'Flex',
+        traction: '4x2',
+        load: 270,
+        space: 'Pouco',
+        transmission: 'Manual',
+        consume: 10.75
     },
     {
-        marca: 'Chevrolet',
-        modelo: 'Onix',
-        passageiros: 2,
-        road: ["Highway", "City"],
-        tracao: ["AWD"]
+        id: 3,
+        modelo: 'Amarok',
+        brand: 'Volkswagen',
+        price: 168879,
+        passengers: 5,
+        condution: 'Off-road',
+        fueltype: 'Diesel',
+        traction: '4x4',
+        load: 1280,
+        space: 'Alto',
+        transmission: 'Automatico',
+        consume: 9.05
     }
+
 ]
 
+//User car variables
+const preco = 50000;
 const passageiros = 3;
-const uso = "Off-road";
+const conducao = ["Cidade", "Off-Road"];
 const tracao = "4x2";
+const carga = 345;
+const espaco = 300;
+const transmissao = ["Manual", "Automatico"];
+const consumo = 9.00;
+
+//Variable that will save the best car option for the user
 let carros_viaveis;
 
-//First Filter
-carros_viaveis = carros.filter( (carro) => carro.passageiros >= passageiros );
+// PRICE - FIRST FILTER
+carros_viaveis = carros.filter( (carro) => carro.price <= preco);
 
-console.log("Primeiro filtro:");
+console.log("Primeiro Filtro:");
 console.log(carros_viaveis);
 
-//Second Filter
-carros_viaveis = carros_viaveis.filter( (carro) => carro.road.includes(uso) );
+
+// PASSENGERS - SECOND FILTER
+carros_viaveis = carros.filter( (carro) => carro.passengers >= passageiros );
 
 console.log("Segundo filtro:");
 console.log(carros_viaveis);
 
-//Third Filter
-carros_viaveis = carros_viaveis.filter( (carro) => carro.tracao.includes(tracao) );
+// CONDUTION - THIRD FILTER
+carros_viaveis = carros_viaveis.filter( (carro) => carro.condution.includes(conducao) );
 
-console.log("Terceiro Filtro:");
+console.log("Terceiro filtro:");
+console.log(carros_viaveis);
+
+// TRACTION - FOURTH FILTER
+carros_viaveis = carros_viaveis.filter( (carro) => carro.traction.includes(tracao) );
+
+console.log("Quarto Filtro:");
 console.log(carros_viaveis);
 
