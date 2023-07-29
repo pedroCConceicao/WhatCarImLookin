@@ -72,14 +72,19 @@ console.log("Segundo filtro:");
 console.log(carros_viaveis);
 
 // CONDUTION - THIRD FILTER
-carros_viaveis = carros_viaveis.filter( (carro) => carro.condution.includes(conducao) );
+carros_viaveis = carros.filter( (carro) => carro.condution.includes(conducao) );
 
 console.log("Terceiro filtro:");
 console.log(carros_viaveis);
 
 // TRACTION - FOURTH FILTER
-carros_viaveis = carros_viaveis.filter( (carro) => carro.traction.includes(tracao) );
+carros_viaveis = carros.filter( (carro) => carro.traction.includes(tracao) );
 
 console.log("Quarto Filtro:");
 console.log(carros_viaveis);
 
+// LOAD - FIFTH FILTER
+carros_viaveis = carros.filter( (carro) => carro.load <= carga);
+
+console.log("Quinto Filtro:");
+console.log(carros_viaveis);
