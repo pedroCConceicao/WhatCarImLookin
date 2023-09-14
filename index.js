@@ -18,7 +18,7 @@ const space = "Mediano";
 const transmission = "Automatic";
 const consumo = 9.00;
 
-//Saves the database over a object list
+//Saves the database over a object list 
 async function teste(){
     
     //rows = cars

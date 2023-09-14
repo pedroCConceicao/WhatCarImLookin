@@ -43,3 +43,21 @@ carros_viaveis = carros.filter( (carro) => carro.load <= carga);
 
 console.log("Quinto Filtro:");
 console.log(carros_viaveis);
+
+//SPACE - SIXTH FILTER
+carros_viaveis = carros.filter( (carro) => carro.space == "Mediano" || carro.space == "Pouco" );
+
+console.log("Sexto Filtro:");
+console.log(carros_viaveis);
+
+//TRANSMISSION - SEVENTH FILTER
+carros_viaveis = carros.filter( (carro) => carro.transmission == "Manual" );
+
+console.log("Sétimo Filtro:");
+console.log(carros_viaveis);
+
+// CONSUME - EIGHTH FILTER
+carros_viaveis = carros.filter( (carro) => carro.consume <= consumo );
+
+console.log("Oitavo Filtro:");
+console.log(carros_viaveis);
